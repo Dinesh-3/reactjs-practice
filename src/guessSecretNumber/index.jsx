@@ -65,16 +65,16 @@ const GuessSecretNumber = () => {
     };
 
     return (
-        <React.Fragment>
-            <header>
+        <div id="guess-my-number">
+            <div className="header">
                 <h1>Guess My Number!</h1>
                 <p className="between">(Between 1 and {MAX_RANGE})</p>
                 <button className="btn again" onClick={handleTryAgain}>
                     Again!
                 </button>
                 <div className="number">{context.showAnswer}</div>
-            </header>
-            <main className={`${context.showAnswer !== "?" ? "bg-green" : ""}`}>
+            </div>
+            <div className={`main ${context.showAnswer !== "?" ? "bg-green" : ""}`}>
                 <section className="left">
                     <input type="number" className="guess" value={userGuess} onChange={handleUserGuessChange} />
                     <button className="btn check" onClick={checkAnswer}>
@@ -90,8 +90,8 @@ const GuessSecretNumber = () => {
                         🥇 Highscore: <span className="highscore">{context.highScore}</span>
                     </p>
                 </section>
-            </main>
-        </React.Fragment>
+            </div>
+        </div>
     );
 };
 
